@@ -1,0 +1,18 @@
+@import "../../styles/colors";
+
+.columnForm {
+  width: 30rem;
+}
+.buttonForm {
+  border: none;
+  margin: 0;
+  width: 4rem;
+  background-color: $logo-color;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  align-self: flex-end;
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../styles/colors";
+
+table {
+  margin-top: 2rem;
+  border-spacing: 0;
+  border: 1px solid $text-color-grey;
+
+  tr {
+    :last-child {
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  th,
+  td {
+    margin: 0;
+    padding: 0.5rem;
+    border-bottom: 1px solid $text-color-grey;
+    border-right: 1px solid $text-color-grey;
+
+    :last-child {
+      border-right: 0;
+    }
+  }
+  th {
+    background-color: $navbar-active-link-background-color;
+  }
+  td:hover {
+    background-color: $logo-color;
+  }
+}
