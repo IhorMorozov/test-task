@@ -1,4 +1,4 @@
-@import "../../../styles/colors";
+@import '../../../styles/colors';
 
 .navbar {
   display: flex;
@@ -9,10 +9,9 @@
   padding: 1rem;
 
   .navbarItems {
-    width: 100%;
+    width: 80%;
     display: flex;
     align-items: center;
-
     .navbarLogo {
       width: 1.5rem;
       height: 1.5rem;

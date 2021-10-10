@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./Navbar.module.scss";
-import { Link, NavLink } from "react-router-dom";
-import { routes } from "../../../router/routes";
-import logo from "../../../assets/images/logo.png";
+import React, { useState } from 'react';
+import styles from './Navbar.module.scss';
+import { Link, NavLink } from 'react-router-dom';
+import { routes } from '../../../router/routes';
+import logo from '../../../assets/images/logo.png';
 
 const Navbar = () => {
   return (

@@ -1,9 +1,15 @@
-import React from "react";
-import styles from "./Search.module.scss";
+import React from 'react';
+import styles from './Search.module.scss';
 
-const Search = () => {
+const Search = (props) => {
+  const { setQuery, placeholder } = props;
   return (
-    <input type="text" placeholder="Search columns" className={styles.search} />
+    <input
+      type="text"
+      placeholder={placeholder}
+      className={styles.search}
+      onChange={(event) => setQuery(event.target.value)}
+    />
   );
 };
 

@@ -38,7 +38,7 @@ const createNewProfile = () => {
   const randomDate = formatDate(
     getRandomDate(new Date(2012, 0, 1), new Date())
   );
-  const workBalance = Math.floor(Math.random() * 100);
+  const workBalance = Math.floor(Math.random() * 80 + 10);
   return {
     profileName: namor.generate({ words: 2, numbers: 0 }),
     status:
@@ -47,7 +47,7 @@ const createNewProfile = () => {
         : statusChance > 0.33
         ? 'Middle'
         : 'Junior',
-    salary: `$${Math.floor(Math.random() * 50) * 100}`,
+    salary: `$${Math.floor(Math.random() * 50) * 100 + 1000}`,
     creationDate: randomDate,
     workLifeBalance: `${workBalance}% / ${100 - workBalance}%`,
     favoriteColor: Math.floor(Math.random() * 7),

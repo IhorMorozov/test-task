@@ -1,5 +1,10 @@
 @import '../../styles/colors';
 
+.sortItem {
+  &:hover {
+    cursor: pointer;
+  }
+}
 table {
   margin-top: 2rem;
   border-spacing: 0;
