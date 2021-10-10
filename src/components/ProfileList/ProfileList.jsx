@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import styles from './ProfileList.module.scss';
 
 const ProfileList = () => {
-  const numberOfProfiles = 15;
+  const numberOfProfiles = 16;
   const selectedColumns = [
     'Profile Name',
     'Status',
