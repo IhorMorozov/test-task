@@ -1,4 +1,4 @@
-@import "styles/colors";
+@import 'styles/colors';
 
 * {
   box-sizing: border-box;
@@ -14,6 +14,6 @@ html,
 input,
 textarea,
 button {
-  font-family: "Inter var", sans-serif;
+  font-family: 'Inter var', sans-serif;
   color: $text-color-white;
 }

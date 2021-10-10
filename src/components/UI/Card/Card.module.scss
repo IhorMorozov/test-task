@@ -1,4 +1,6 @@
-.card {
+@import '../../../styles/colors';
+
+.cardContainer {
   min-width: 30rem;
   &:hover {
     transform: translateY(-5px) scale(1.05);

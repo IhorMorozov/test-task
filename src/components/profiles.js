@@ -59,7 +59,14 @@ export function makeProfiles(length) {
   deleteTable();
   createTable();
   profiles.forEach((profile) => {
-    insertRow(profile.profileName, profile.status);
+    insertRow(
+      profile.profileName,
+      profile.status,
+      profile.creationDate,
+      profile.workLifeBalance,
+      profile.salary,
+      profile.favoriteColor
+    );
   });
   select();
 }

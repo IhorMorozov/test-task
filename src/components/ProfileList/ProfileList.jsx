@@ -1,81 +1,33 @@
-import React, { useMemo } from 'react';
+import React, { useContext, useMemo } from 'react';
 import './ProfileList.module.scss';
-import makeProfiles from '../makeProfiles';
-import { Link } from 'react-router-dom';
-import styles from './ProfileList.module.scss';
+import { getProfiles, makeProfiles } from '../profiles';
+import ProfileItem from '../ProfileItem/ProfileItem';
+import Context from '../../context/context';
 
 const ProfileList = () => {
-  const numberOfProfiles = 16;
-  const selectedColumns = [
-    'Profile Name',
-    'Status',
-    'Current Salary',
-    'Creation Date',
-    'Work-Life Balance',
-    'Favorite Color',
-  ];
-  const colors = [
-    {
-      heart: '💙',
-      tooltip: 'Blue',
-    },
-    {
-      heart: '💚',
-      tooltip: 'Green',
-    },
-    {
-      heart: '💛',
-      tooltip: 'Yellow',
-    },
-    {
-      heart: '🧡',
-      tooltip: 'Orange',
-    },
-    {
-      heart: '💜',
-      tooltip: 'Purple',
-    },
-    {
-      heart: '🖤',
-      tooltip: 'Black',
-    },
-    {
-      heart: '❤',
-      tooltip: 'White',
-    },
-  ];
-  const profiles = useMemo(() => makeProfiles(numberOfProfiles), []);
+  const numberOfProfiles = 4;
+  const { checkboxes, setCheckboxes } = useContext(Context);
+
+  useMemo(() => {
+    makeProfiles(numberOfProfiles);
+  }, []);
+  const profiles = getProfiles();
+
   return (
     <table>
       <thead>
         <tr>
-          {selectedColumns.map((c) => (
-            <th key={c}>{c}</th>
-          ))}
+          {checkboxes.map((column) => {
+            if (column.checked === 'true') {
+              return <th key={column.value}>{column.title}</th>;
+            }
+          })}
         </tr>
       </thead>
       <tbody>
-        {profiles.map((profile) => {
-          return (
-            <tr key={Math.random()}>
-              <td key={profile.name}>
-                <Link to="/summary">{profile.profileName}</Link>
-              </td>
-              <td key={profile.status}>{profile.status}</td>
-              <td key={profile.salary}>{profile.salary}</td>
-              <td key={profile.creationDate}>{profile.creationDate}</td>
-              <td key={profile.workLifeBalance}>{profile.workLifeBalance}</td>
-              <td key={profile.favoriteColor}>
-                <div className={styles.tooltip}>
-                  {colors[profile.favoriteColor].heart}
-                  <span className={styles.tooltipText}>
-                    {colors[profile.favoriteColor].tooltip}
-                  </span>
-                </div>
-              </td>
-            </tr>
-          );
-        })}
+        {profiles.map((profile) => (
+          <ProfileItem profile={profile} />
+        ))}
       </tbody>
     </table>
   );

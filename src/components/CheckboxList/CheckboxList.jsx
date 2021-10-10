@@ -2,16 +2,17 @@ import React from 'react';
 import CheckboxItem from '../CheckboxItem/CheckboxItem';
 
 const CheckboxList = (props) => {
-  // const { checkboxes } = props;
+  const { checkboxes, onToggle } = props;
   return (
     <div>
-      {/*{checkboxes.map((checkbox) => CheckboxItem())}*/}
-      <CheckboxItem column={'Profile Name'} />
-      <CheckboxItem column={'Status'} />
-      <CheckboxItem column={'Current Salary'} />
-      <CheckboxItem column={'Creation Date'} />
-      <CheckboxItem column={'Work-Life Balance'} />
-      <CheckboxItem column={'Favorite Color'} />
+      {checkboxes.map((checkbox) => (
+        <CheckboxItem
+          column={checkbox.title}
+          isChecked={checkbox.checked}
+          key={checkbox.value}
+          onToggle={() => onToggle(checkbox.value)}
+        />
+      ))}
     </div>
   );
 };
