@@ -1,4 +1,11 @@
 import namor from 'namor';
+import {
+  createTable,
+  deleteTable,
+  getProfilesData,
+  insertRow,
+  select,
+} from './database';
 
 const range = (len) => {
   const arr = [];
@@ -47,8 +54,16 @@ const createNewProfile = () => {
   };
 };
 
-export default function makeProfiles(length) {
-  return range(length).map((p) => createNewProfile());
+export function makeProfiles(length) {
+  const profiles = range(length).map((p) => createNewProfile());
+  deleteTable();
+  createTable();
+  profiles.forEach((profile) => {
+    insertRow(profile.profileName, profile.status);
+  });
+  select();
 }
 
-
+export function getProfiles() {
+  return getProfilesData();
+}
