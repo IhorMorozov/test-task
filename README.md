@@ -1,4 +1,4 @@
-# Test task for `Spilna Sprava` by Ihor Morozov 
+# Test task by `Ihor Morozov`
 ## Usage
 * Clone this repository `git clone https://github.com/IhorMorozov/test-task.git`
 * Run `yarn install` to install dependencies
