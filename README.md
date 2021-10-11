@@ -9,7 +9,7 @@
 
 * Go to the link: *[test-task.app](https://test-task-ihormorozov.vercel.app/profile)*
 
-# UI Requirements:
+# UI requirements:
 
 ### General
 - [x] Create application with 2 tabs
@@ -46,3 +46,5 @@
 - [x] All implement components should be re-usable and extendable
 - [ ] Add tests
 - [ ] Implement moduleness infrastructure of you project
+
+> P.S. I know that some of my technical solutions are not very good, but I have a great desire to learn from you as professionals, to develop a complex application architecture, and write clean code!
