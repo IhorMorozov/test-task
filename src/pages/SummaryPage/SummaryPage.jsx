@@ -57,7 +57,6 @@ const SummaryPage = () => {
               ) : (
                 info.body
               )}
-              {/*<hr />*/}
             </p>
           ))}
         </div>
