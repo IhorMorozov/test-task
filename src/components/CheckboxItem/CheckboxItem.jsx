@@ -5,11 +5,11 @@ const CheckboxItem = (props) => {
   const { onToggle, column, isChecked } = props;
 
   return (
-    <div className={styles.checkboxWrapper}>
+    <div className={styles.checkboxWrapper} onClick={onToggle}>
       <input
         type="checkbox"
         className={styles.checkbox}
-        onChange={onToggle}
+        // onChange={onToggle}
         checked={isChecked === 'true'}
       />
       <p>{column}</p>
