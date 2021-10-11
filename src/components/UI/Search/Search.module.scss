@@ -1,7 +1,6 @@
-@import "../../../styles/colors";
+@import '../../../styles/colors';
 
 .search {
-  margin: 1rem 0;
   border-radius: 20px;
   background-color: $text-color-black;
   width: 100%;
@@ -10,5 +9,5 @@
   color: $text-color-white;
   outline: none;
   border-style: none;
-  margin-right: 50px;
+  margin: 1rem 50px 1rem 0;
 }

@@ -50,7 +50,7 @@ const createNewProfile = () => {
     salary: `$${Math.floor(Math.random() * 50) * 100 + 1000}`,
     creationDate: randomDate,
     workLifeBalance: `${workBalance}% / ${100 - workBalance}%`,
-    favoriteColor: Math.floor(Math.random() * 7),
+    favoriteColor: `${Math.floor(Math.random() * 7)}`,
   };
 };
 
