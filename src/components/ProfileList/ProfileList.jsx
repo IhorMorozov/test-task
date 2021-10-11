@@ -15,7 +15,7 @@ const ProfileList = () => {
   }, []);
   const data = getProfiles();
   const [sort, setSort] = useState('');
-  const profiles = useProfiles(data, sort);
+  const profiles = useProfiles(data, sort, numberOfProfiles);
   const sortProfiles = (value) => {
     localStorage.setItem('sort', value);
     setSort(localStorage.getItem('sort'));
