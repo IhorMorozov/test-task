@@ -45,7 +45,7 @@ const SummaryPage = () => {
         <h1>{title}</h1>
         <div className={styles.summaryInfo}>
           {info.map((info) => (
-            <p>
+            <p key={info.title}>
               <span className={styles.title}>{info.title}: </span>
               {info.title === 'Favorite Color' ? (
                 <span className={st.tooltip}>
@@ -57,7 +57,6 @@ const SummaryPage = () => {
               ) : (
                 info.body
               )}
-              {/*<hr />*/}
             </p>
           ))}
         </div>

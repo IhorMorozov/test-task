@@ -25,7 +25,7 @@ const ProfileList = () => {
     <table>
       <thead>
         <tr>
-          {checkboxes.map((column) => {
+          {checkboxes.map((column, index) => {
             if (column.checked === 'true') {
               return (
                 <th
@@ -44,8 +44,8 @@ const ProfileList = () => {
         </tr>
       </thead>
       <tbody>
-        {profiles.map((profile) => (
-          <ProfileItem profile={profile} />
+        {profiles.map((profile, index) => (
+          <ProfileItem profile={profile} key={index} />
         ))}
       </tbody>
     </table>
