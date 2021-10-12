@@ -10,7 +10,6 @@ import st from '../ProfileItem/ProfileItem.module.scss';
 const ProfileList = () => {
   const numberOfProfiles = 15;
   const { checkboxes, setCheckboxes } = useContext(Context);
-
   const data = getProfiles();
   const [sort, setSort] = useState('');
   const profiles = useProfiles(data, sort, numberOfProfiles);
@@ -18,6 +17,7 @@ const ProfileList = () => {
     localStorage.setItem('sort', value);
     setSort(localStorage.getItem('sort'));
   };
+
   useEffect(() => {
     if (profiles.length === 0) {
       makeProfiles(numberOfProfiles);
@@ -32,7 +32,7 @@ const ProfileList = () => {
       <thead>
         <tr>
           {checkboxes.map((column, index) => {
-            if (column.checked === 'true') {
+            if (localStorage.getItem(column.value) === 'true') {
               if (column.value !== 'color') {
                 return (
                   <th

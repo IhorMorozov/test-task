@@ -40,6 +40,12 @@ const ProfilePage = () => {
       checked: localStorage.getItem('color') || 'false',
     },
   ]);
+  checkboxes.map((checkbox) => {
+    localStorage.setItem(
+      checkbox.value,
+      localStorage.getItem(checkbox.value) || 'false'
+    );
+  });
 
   return (
     <Context.Provider value={{ checkboxes, setCheckboxes }}>
