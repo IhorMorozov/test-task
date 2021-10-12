@@ -1,4 +1,4 @@
-@import 'styles/colors';
+@import 'styles/constants';
 
 * {
   box-sizing: border-box;
@@ -16,4 +16,12 @@ textarea,
 button {
   font-family: 'Inter var', sans-serif;
   color: $text-color-white;
+}
+html {
+  @media screen and (max-width: $breakpoint-tablet) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 8px;
+  }
 }

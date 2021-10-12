@@ -1,8 +1,12 @@
-@import '../../styles/colors';
+@import '../../styles/constants';
 .cardsWrapper {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  padding: 20px;
+  @media screen and (max-width: $breakpoint-desktop) {
+    flex-direction: column;
+  }
 }
 .summaryInfo {
   margin-top: 3rem;
