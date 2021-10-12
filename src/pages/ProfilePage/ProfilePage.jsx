@@ -35,6 +35,11 @@ const ProfilePage = () => {
       checked: localStorage.getItem('balance') || 'false',
     },
     {
+      title: 'Happiness',
+      value: 'happiness',
+      checked: localStorage.getItem('happiness') || 'false',
+    },
+    {
       title: 'Favorite Color',
       value: 'color',
       checked: localStorage.getItem('color') || 'false',

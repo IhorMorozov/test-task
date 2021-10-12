@@ -33,22 +33,18 @@ const ProfileList = () => {
         <tr>
           {checkboxes.map((column, index) => {
             if (localStorage.getItem(column.value) === 'true') {
-              if (column.value !== 'color') {
-                return (
-                  <th
-                    key={column.value}
-                    onClick={() => sortProfiles(column.value)}
-                    className={styles.sortItem}
-                  >
-                    <span className={st.tooltip}>
-                      {column.title}
-                      <span className={st.tooltipText}>Sort</span>
-                    </span>
-                  </th>
-                );
-              } else {
-                return <th key={column.value}> {column.title}</th>;
-              }
+              return (
+                <th
+                  key={column.value}
+                  onClick={() => sortProfiles(column.value)}
+                  className={styles.sortItem}
+                >
+                  <span className={st.tooltip}>
+                    {column.title}
+                    <span className={st.tooltipText}>Sort</span>
+                  </span>
+                </th>
+              );
             }
           })}
         </tr>

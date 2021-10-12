@@ -29,3 +29,9 @@
 .tooltip:hover .tooltipText {
   visibility: visible;
 }
+
+.progress {
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 4rem;
+  }
+}

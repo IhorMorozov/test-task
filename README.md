@@ -20,6 +20,7 @@
 
 ### Grid columns
 - [x] Add one or few columns with image and tooltip on hover
+- [x] Add some progress column, and present inside simple progress line
 - [x] Grid should have at least 1 column with date format. It should be presented like dd/mm/YYYY
 - [x] Add one or few columns with percentage format
 - [x] Add one or few columns with currency format (with $)

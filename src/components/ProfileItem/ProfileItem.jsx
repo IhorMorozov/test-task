@@ -29,12 +29,22 @@ const ProfileItem = ({ profile }) => {
       {localStorage.getItem('balance') === 'true' && (
         <td key={profile.balance}>{profile.balance}</td>
       )}
+      {localStorage.getItem('happiness') === 'true' && (
+        <td key={profile.balance}>
+          {' '}
+          <progress
+            max="100"
+            value={Number(profile.happiness)}
+            className={styles.progress}
+          ></progress>
+        </td>
+      )}
       {localStorage.getItem('color') === 'true' && (
         <td key={profile.color}>
           <div className={styles.tooltip}>
-            {colors[profile.color].heart}
+            {colors[Number(profile.color)].heart}
             <span className={styles.tooltipText}>
-              {colors[profile.color].tooltip}
+              {colors[Number(profile.color)].tooltip}
             </span>
           </div>
         </td>

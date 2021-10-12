@@ -33,6 +33,9 @@ const SummaryPage = () => {
       localStorage.getItem('balance') === 'true'
         ? generalInfo.push(createObject('Work-Life Balance', profile.balance))
         : otherInfo.push(createObject('Work-Life Balance', profile.balance));
+      localStorage.getItem('happiness') === 'true'
+        ? generalInfo.push(createObject('Happiness', profile.happiness))
+        : otherInfo.push(createObject('Happiness', profile.happiness));
       localStorage.getItem('color') === 'true'
         ? generalInfo.push(createObject('Favorite Color', profile.color))
         : otherInfo.push(createObject('Favorite Color', profile.color));
@@ -49,11 +52,13 @@ const SummaryPage = () => {
               <span className={styles.title}>{info.title}: </span>
               {info.title === 'Favorite Color' ? (
                 <span className={st.tooltip}>
-                  {colors[info.body].heart}
+                  {colors[Number(info.body)].heart}
                   <span className={st.tooltipText}>
-                    {colors[info.body].tooltip}
+                    {colors[Number(info.body)].tooltip}
                   </span>
                 </span>
+              ) : info.title === 'Happiness' ? (
+                <progress max="100" value={Number(info.body)}></progress>
               ) : (
                 info.body
               )}
