@@ -46,7 +46,7 @@ const ProfilePage = () => {
       localStorage.getItem(checkbox.value) || 'false'
     );
   });
-  localStorage.setItem('sort', 'name');
+  localStorage.setItem('sort', localStorage.getItem('sort') || 'name');
 
   return (
     <Context.Provider value={{ checkboxes, setCheckboxes }}>
